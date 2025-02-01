@@ -16,12 +16,10 @@
           :key="index"
           class="bg-white p-4 rounded shadow-lg w-60 flex flex-col items-center justify-center transition hover:bg-gray-100"
         >
-          <!-- City Name -->
           <div class="text-black font-bold text-center">
             {{ city.name.toUpperCase() }}
           </div>
 
-          <!-- Buttons (Always visible on small screens, hover on larger screens) -->
           <div class="flex flex-col w-full mt-2 gap-2">
             <router-link
               :to="`/weather/${city.name}`"

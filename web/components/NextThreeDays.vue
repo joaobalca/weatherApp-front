@@ -10,12 +10,10 @@
         :key="index"
         class="mb-4 bg-blue-800 text-white rounded-lg shadow-md p-4"
       >
-        <!-- Day Overview -->
         <div
           class="flex flex-col lg:flex-row lg:items-center lg:justify-between cursor-pointer"
           @click="toggleDay(index)"
         >
-          <!-- Day and Weather -->
           <div class="flex items-center gap-4">
             <div>
               <h3 class="text-lg font-semibold">
@@ -30,7 +28,6 @@
             />
           </div>
 
-          <!-- Weather Details -->
           <div class="mt-2 lg:mt-0 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-center">
             <div>
               <p class="font-bold">{{ day.minTemp.toFixed(1) }}°</p>
@@ -50,7 +47,6 @@
             </div>
           </div>
 
-          <!-- Dropdown Arrow -->
           <div class="ml-4 lg:ml-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +66,6 @@
           </div>
         </div>
 
-        <!-- Hourly Weather (Collapsible) -->
         <div v-if="openDays[index]" class="mt-4">
           <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
             <div
@@ -95,7 +90,6 @@
       </div>
     </div>
 
-    <!-- Fallback message -->
     <div v-else-if="!isLoadingWeatherDetails && error" class="text-white text-center">
       <p>{{error}}</p>
     </div>
@@ -112,7 +106,6 @@ const props = defineProps({
   error: String,
 });
 
-// Process and group weather data for the next 3 days
 const nextDaysWeather = computed(() => {
   if (!props.weatherDetails || !props.weatherDetails.list) return [];
 
@@ -153,7 +146,6 @@ const nextDaysWeather = computed(() => {
   return Object.values(days);
 });
 
-// Track which days are expanded
 const openDays = ref([]);
 
 const toggleDay = (index) => {
@@ -162,7 +154,6 @@ const toggleDay = (index) => {
 </script>
 
 <style>
-/* Ensure dropdown arrow rotates */
 .rotate-180 {
   transform: rotate(180deg);
 }
