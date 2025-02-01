@@ -1,10 +1,46 @@
-# weatherApp
-
 ## About this Project
 This is an application built using **Nuxt 3**, **Express.js**, and **MongoDB**. The app allows users to:
 
 - Search for a city to view its weather information.
 - Save or remove cities from their saved list.
+
+## Notes:
+### Recommended Node version: 18.20.5
+-> If you find any problem with any package when you stop and start again locally, try to remove node modules and package-lock.json 
+```bash rm -rf node_modules package-lock.json ``` and run npm install after.
+
+## Setup
+
+Make sure to install dependencies:
+
+```bash
+npm install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+Please check the .env file if you want to run using the api locally
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+## Testing:
+
+```bash
+npm run test
+```
+## Deploy
+Automatic Deployment: Every commit to the main branch automatically triggers a deployment on Vercel.
 
 ## Challenges Faced and Solutions
 
@@ -16,44 +52,6 @@ The "Save Location" button didn’t update its state when a city was already sav
 Due to OpenWeather's limitations, I couldn't show today's weather if the time had already passed.
 **Solution:** I put in a condition so that when there is no more data to show for the current day, it shows the next one.
 
-# Nuxt Minimal Starter
-
-### Recommended Node version: 18.20.5
-
-## If you find any problem with any package when you stop and start again locally, try to remove node modules and package-lock.json (rm -rf node_modules package-lock.json) and run npm install after.
-## Setup
-
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-```
-
-## Testing:
-
-```bash
-# npm
-npm run test
-```
 ## Dependencies
 
 - **@pinia/nuxt**: Integration of Pinia (state management library) with Nuxt 3.

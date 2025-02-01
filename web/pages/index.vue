@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid p-30">
+  <div class="container-fluid p-10">
     <SearchForm />
     <CityList :cities="weatherStore.savedCities" />
   </div>

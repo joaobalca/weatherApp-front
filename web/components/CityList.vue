@@ -7,23 +7,32 @@
       <Spinner />
     </div>
     <div v-else>
-      <p class="text-white" v-if="weatherStore.savedCities.length === 0">
+      <p class="text-white text-center" v-if="weatherStore.savedCities.length === 0">
         No cities to display
       </p>
       <ul v-else class="flex justify-center items-start flex-row gap-4 flex-wrap">
         <li
           v-for="(city, index) in weatherStore.savedCities"
           :key="index"
-          class="relative bg-white p-4 rounded shadow-lg group w-60 h-20 flex items-center justify-center transition hover:bg-gray-100"
+          class="bg-white p-4 rounded shadow-lg w-60 flex flex-col items-center justify-center transition hover:bg-gray-100"
         >
-          <span class="text-black font-bold group-hover:opacity-0 transition">
+          <!-- City Name -->
+          <div class="text-black font-bold text-center">
             {{ city.name.toUpperCase() }}
-          </span>
-          <div class="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center gap-4 bg-black/60 opacity-0 group-hover:opacity-100 rounded transition">
-            <router-link :to="`/weather/${city.name}`" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+          </div>
+
+          <!-- Buttons (Always visible on small screens, hover on larger screens) -->
+          <div class="flex flex-col w-full mt-2 gap-2">
+            <router-link
+              :to="`/weather/${city.name}`"
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition text-center w-full"
+            >
               View Weather
             </router-link>
-            <button @click="handleDelete(city.name)" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+            <button
+              @click="handleDelete(city.name)"
+              class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition w-full cursor-pointer"
+            >
               Delete
             </button>
           </div>
@@ -32,6 +41,7 @@
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { useWeatherStore } from '@/stores/weatherStore';

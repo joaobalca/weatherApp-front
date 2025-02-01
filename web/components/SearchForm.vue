@@ -1,19 +1,21 @@
 <template>
-  <form @submit.prevent="handleSearch" class="flex gap-4">
-    <input
-      v-model="searchQuery"
-      type="text"
-      placeholder="Enter city name"
-      class="p-2 border border-white text-white rounded flex-1"
-    />
-    <button 
-      type="submit" 
-      class="p-2 bg-blue-500 text-white rounded" 
-      :class="searchQuery ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-400 cursor-not-allowed'"
-      :disabled="!searchQuery"
-    >
-      Search
-    </button>
+  <form @submit.prevent="handleSearch" class="flex justify-center mt-4">
+    <div class="relative w-80">
+      <input
+        v-model="searchQuery"
+        type="text"
+        placeholder="Enter city name"
+        class="w-full p-2 pr-12 border border-white text-white rounded bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <button 
+        type="submit"
+        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition"
+        :class="searchQuery ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-400 cursor-not-allowed'"
+        :disabled="!searchQuery"
+      >
+        🔍
+      </button>
+    </div>
   </form>
   <p v-if="error" class="text-red-500 mt-2">{{ error }}</p>
 </template>
