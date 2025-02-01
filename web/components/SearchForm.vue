@@ -9,7 +9,7 @@
       />
       <button 
         type="submit"
-        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition"
+        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition cursor-pointer"
         :class="searchQuery ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-400 cursor-not-allowed'"
         :disabled="!searchQuery"
       >

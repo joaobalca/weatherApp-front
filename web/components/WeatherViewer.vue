@@ -24,7 +24,7 @@
         <button
           @click="saveCity"
           :disabled="isSaved"
-          class="mt-4 md:mt-0 px-4 py-2 text-sm font-semibold rounded-full"
+          class="mt-4 md:mt-0 px-4 py-2 text-sm font-semibold rounded-full cursor-pointer"
           :class="isSaved ? 'bg-gray-500 cursor-not-allowed' : 'bg-yellow-500 hover:bg-yellow-600 text-black'"
         >
           {{ isSaved ? 'Saved' : 'Save Location' }}
